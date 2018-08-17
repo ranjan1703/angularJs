@@ -1,0 +1,79 @@
+<!-- 1	uppercase-	converts a text to upper case text.
+2	lowercase-	converts a text to lower case text.
+3	currency-	formats text in a currency format.
+4	filter-	filter the array to a subset of it based on provided criteria.
+5	orderby-	orders the array based on provided criteria. -->
+
+
+<html>
+<head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+
+</head>
+<body>
+<h2>Working with Uppercase, lowercase, Currency, filter, orderby Filters</h2>
+<div ng-app ="mainApp" ng-controller = "studentController">
+<table border="0">
+<tr>
+    <td>Enter first name:</td>
+    <td><input type="text" ng-model="student.firstName"></td>
+</tr>
+<tr>
+<td>Enter last name:</td>
+<td><input type="text" ng-model="student.lastName"></td>
+</tr>
+<tr>
+<td>Enter fees:</td>
+<td><input type="text" ng-model= "student.fees"></td>
+</tr>
+<tr>
+    <td>Enter Subject:</td>
+    <td><input type="text" ng-model="subjectName"></td>
+</tr>
+</table>
+<br/>
+<table border="0">
+    <tr>
+        <td>Name in Upper Case:</td><td>{{student.fullName() | uppercase}}</td>
+</tr>
+<tr>
+    <td>Name in Lower Case:</td><td>{{student.fullName() | lowercase}}</td>
+    </tr>
+    <tr>
+<td>Subject:</td>
+<td>
+    <ul>
+        <li ng-repeat ="subject in student.subjects | filter: subjectName | orderBy:'marks'">
+
+            {{subject.name + ', marks:' + subject.marks}}
+        </li>
+
+    </ul>
+</td>
+    </tr>
+</table>
+
+</div>
+<script>
+var mainApp = angular.module("mainApp",[]);
+mainApp.controller('studentController', function($scope){
+    $scope.student={
+        firstName: "mahesh",
+        lastName: "Singh",
+        fees:400,
+        subjects:[
+            {name:'Physics', marks:70},
+            {name:'Maths', marks:60},
+            {name:'Bio', marks:90}
+        ],
+        fullName:function(){
+            var studentObject;
+            studentObject=$scope.student;
+            return studentObject.firstName + " " + studentObject.lastName;
+        }
+    };
+});
+</script>
+</body>
+
+</html>
