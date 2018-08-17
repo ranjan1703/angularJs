@@ -1,0 +1,47 @@
+<!-- AngularJS version 1.0 was released in 2012.
+
+Miško Hevery, a Google employee, started to work with AngularJS in 2009.
+
+The idea turned out very well, and the project is now officially supported by Google. -->
+<!-- -The "ng-app" directive defines an AngulasJS application.
+    -The "ng-modal" directive binds the value of HTML controls(input, select, textarea) to application data 
+- The "ng-bind" directive binds application data to the HTML view.
+-ng-init − This directive initializes application data.
+-ng-repeat directive repeats html elements for each item in a collection.-->
+<html>
+    <head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+
+
+    </head>
+    <body>
+     
+     <!--  <div ng-app="" ng-init = "countries =
+      [
+           {locale:'en-Us', name:'United States'}, 
+          {locale:'en-GB', name:'United Kingdom'},
+          {locale:'en-FR',name:'France'}]">
+          
+          <p>Enter Your Name:<input type="text" ng-model="name"></p>
+          <p>Helllo <span ng-bind="name"></span></p>
+          <ol>
+              <li ng-repeat="country in countries">
+{{ 'Country:' + country.name + ', Locale: ' + country.locale}}
+              </li>
+          </ol>
+      </div>
+
+    <hr/>  -->
+      <!--Expressions are used to bind application data to html.
+         Expressions are written inside double braces like {{ expression}}. Expressions behaves in same way as ng-bind directives. 
+        AngularJS application expressions are pure javascript expressions and outputs the data where they are used.  -->
+         <div ng-app ="" ng-init = "quantity =1; cost=30; student = {firstname:'Mahesh', lastname:'Singh',rollno:101}; marks=[20,30,50,60,70]">
+             <p>Hello {{student.firstname + " " + student.lastname}} !</p>
+             <p>Expense on Books: {{cost * quantity}} RS</p>
+             <p>Roll No:{{ student.rollno}}</p>
+             <p>Marks(math): {{marks[3]}}</p>
+
+         </div>
+
+    </body>
+</html>
