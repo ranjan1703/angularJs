@@ -1,0 +1,40 @@
+<!-- 
+1	ng-disabled -	disables a given control.
+2	ng-show -	shows a given control.
+3	ng-hide	- hides a given control.
+4	ng-click -	represents a AngularJS click event.
+ -->
+
+<html>
+    <head>
+            <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    </head>
+    <body>
+<h2>Working with ng-disabled, ng-show, ng-hide, ng-click</h2>
+<div ng-app="">
+    <table border="0">
+        
+        <tr>
+            <td><input type="checkbox" ng-model="enableDisableButton">Disable Button</td>
+            <td><button ng-disabled="enableDisableButton">Click me</button></td>
+        </tr>
+        
+        <tr>
+            <td><input type="checkbox" ng-model="showHide1">Show Button</td>
+            <td><button ng-show="showHide1">Click me</button></td>
+        </tr>
+        
+        <tr>
+            <td><input type="checkbox" ng-model="showHide2">hide Button</td>
+            <td><button ng-hide="showHide2">Click me</button></td>
+        </tr>
+        
+        <tr>
+            <td><p>Total click: {{ clickCounter }}</p></td>
+            <td><button ng-click="clickCounter = clickCounter + 1">Click Me</button></td>
+        </tr>
+
+    </table>
+</div>
+    </body>
+</html>

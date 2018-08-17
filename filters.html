@@ -32,12 +32,15 @@
 </tr>
 </table>
 <br/>
-<table border="0">
+<table border="1">
     <tr>
         <td>Name in Upper Case:</td><td>{{student.fullName() | uppercase}}</td>
 </tr>
 <tr>
     <td>Name in Lower Case:</td><td>{{student.fullName() | lowercase}}</td>
+    </tr>
+    <tr>
+        <td>Currency:</td><td>{{student.fees  | currency}}</td>
     </tr>
     <tr>
 <td>Subject:</td>
